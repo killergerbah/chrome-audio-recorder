@@ -1,0 +1,31 @@
+{
+  "name": "Chrome Audio Recorder",
+  "description": "Saves Chrome audio to a wav file",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "permissions": ["activeTab", "tabCapture", "*://*/*"],
+  "commands": {
+    "start": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Z",
+        "mac": "Command+Shift+Z"
+      },
+      "description": "Start recording"
+    },
+    "stop": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X",
+        "mac": "Command+Shift+X"
+      },
+      "description": "Stop recording"
+    }
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["content.js"]
+  }]
+}
