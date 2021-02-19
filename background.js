@@ -14,6 +14,7 @@ class Recorder {
         }
 
         chrome.tabCapture.capture({audio: true}, stream => this._start(stream));
+        chrome.browserAction.setBadgeText({text: 'rec'}, () => {});
     }
 
     _start(stream) {
@@ -78,6 +79,8 @@ class Recorder {
         this.audio.pause();
         this.audio.srcObject = null;
         this.audio = null;
+        
+        chrome.browserAction.setBadgeText({}, () => {});
     }
 }
 
