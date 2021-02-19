@@ -1,4 +1,4 @@
-#chrome-audio-recorder
+# chrome-audio-recorder
 
 Extension that records tab audio to a wav file.
 
